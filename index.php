@@ -15,12 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $categoria = $_POST["Categoria"];
         echo "Categoria selecionada: " . $categoria;
     } else {
-          // Exibindo uma mensagem de erro se a categoria não foi selecionada
-        echo "<div class='alert alert-danger' role='alert'>
-        Por favor, selecione uma categoria.
-      </div>";
-    }
-
+        // Exibindo uma mensagem de erro se a categoria não foi selecionada
+        echo "Por favor, selecione uma categoria.";
+}
 
 //****************************************************************NOME
 
@@ -31,10 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<br>Nome do produto: " . $nomeProduto;
     } else {
         echo "<br>O campo Nome do Produto é obrigatório.";
-    }
+}
 
-
- 
 //*******************************************************************MARCA
 if (isset($_POST['NomeMarca'])){
     $nomeMarca = $_POST["NomeMarca"];
@@ -45,6 +40,14 @@ if (isset($_POST['NomeMarca'])){
 
 }
 
+// ******************************************DESCRICAO
+
+if (isset($_POST['DescricaoProduto'])){
+    $descricaoProduto = $_POST["DescricaoProduto"];
+    echo "<br>Descrição do produto: " . $descricaoProduto;
+}else {
+    echo "<br>O campo Descrição é obrigatório.";
+}
 
 
 // *****************************************************************DISPONIBILIDADE
@@ -80,8 +83,6 @@ else{
 }
 
 
-
-
 //****************************************************************DIMENSOES
 
     // Verifica se o campo 'DimensaoProdutoAltura e DimensaoProdutoLargura' foi enviado
@@ -94,18 +95,6 @@ else{
         echo "<br>O campo Dimensoes é obrigatório.";
     }
 
-
-// *******************************************************************MATERIAIS
-
-//Materiais
-//validando o formulario com isset(se o usuario selecionou os campos)
-if(!isset($_POST['Materiais'])){
-    echo "Informe pelo menos 1 Material";
-}
- //recebendo os envios
-foreach($_POST['Materiais'] as $materiais){
-    echo " <br> Tipo de material: $materiais     <br>";
-}
 
 // ********************************************************************DATA DE VALIDADE
 if (isset($_POST["data"])) {
@@ -142,7 +131,7 @@ $garantiaOpcao = array(
 
     } else{
         echo "<br> O campo Garantia é obrigatório. <br>";
-    }
+}
 
 
 // *********************************************************AVALIAÇÃO
@@ -166,6 +155,7 @@ if (isset ($_POST["tamanho"])){
         echo "O campo de tamanho não foi enviado.";
 }
 
+
 // ****************************************************** Condicoes de conservacao 
 //criando um array para as opçoes de Condicoes de conservacao 
 
@@ -185,7 +175,20 @@ if (isset($_POST["conservacao"])) {
     echo "<br>O campo Conservação é obrigatório. <br>";
 }
 
-//
 
+// *******************************************************************MATERIAIS
+
+//Materiais
+//validando o formulario com isset(se o usuario selecionou os campos)
+
+if(!isset($_POST['Materiais'])){
+    echo "<br>Informe pelo menos 1 Material";
+    exit;//se nao veio, ele para aqui
+    //exit nao carrega o codigo abaixo dele
+}
+ //recebendo os envios
+foreach($_POST['Materiais'] as $materiais){
+    echo " <br> Tipo de material: $materiais     <br>";
+}
 
 ?>

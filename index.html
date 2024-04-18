@@ -7,8 +7,10 @@
     <title>Produtos</title>
     <!--BOOTSTRAP LINKS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -46,6 +48,14 @@
             <h2>Marca do Produto: </h2>
             <label for="marca"> Adcionar marca do produto: </label>
             <input type="text" id="marca" name="NomeMarca" required>
+
+            
+            <!--Descricao -->
+
+            <h2>Descricao do Produto: </h2>
+            <label for="descricao"> Adcionar descricao do produto: </label>
+            <input type="text" id="descricao" name="DescricaoProduto" required>
+
 
             <!--Disponibilidade -->
             <h2>Disponibilidade: </h2>
@@ -290,13 +300,13 @@
 
             <h2>Conservação do Item:</h2>
             <label for="embalagem_a_vacuo">
-                <input type="radio" id="embalagem_a_vacuo" name="conservacao" value="embalagem_a_vacuo">Embalagem a vácuo
+                <input type="radio" id="embalagem_a_vacuo" name="conservacao" value="embalagem_a_vacuo" checked>Embalagem a vácuo
             </label>
             <label for="controle_temperatura_umidade">
                 <input type="radio" id="controle_temperatura_umidade" name="conservacao" value="controle_temperatura_umidade">Controle de temperatura e umidade
             </label>
             <label for="local_fresco_seco">
-                <input type="radio" id="local_fresco_seco" name="conservacao" value="local_fresco_seco" checked>Armazenamento em local fresco e seco
+                <input type="radio" id="local_fresco_seco" name="conservacao" value="local_fresco_seco" >Armazenamento em local fresco e seco
             </label>
             <label for="manutencao_regular">
                 <input type="radio" id="manutencao_regular" name="conservacao" value="manutencao_regular">Manutenção regular
