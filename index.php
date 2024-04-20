@@ -1,8 +1,9 @@
 <?php
 
 //verificar se uma variável foi definida e se não é NULL: isset() 
-//verificar se uma variável está vazia: empty() 
-//verificar se uma variável NAO está vazia: !empty() 
+//verificar se uma variável NÃO FOI DEFINIDA OU SE ESTÁ vazia: empty()
+//verificar se uma variável FOI DEFINIDA E NÃO está vazia: !empty()
+//para o PHP, são considerados valores vazios: string vazia (""), zero (0), false e null.
 //verificar o que foi enviado atraves do POST no HTML: if ($_SERVER["REQUEST_METHOD"] == "POST")
 
 // Verificando se os dados foram enviados via POST
